@@ -58,7 +58,7 @@ const sampleData = generateItems();
 
 const insertSampleData = () => {
   RelatedItem.create(sampleData)
-    .then(() => db.disconnect())
+    .then(() => process.exit())
     .catch((err) => console.log(err));
 };
 
