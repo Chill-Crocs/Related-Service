@@ -1,5 +1,4 @@
 const faker = require('faker');
-const db = require('./index.js');
 const RelatedItem = require('./Item.js');
 
 const generateTags = () => {
