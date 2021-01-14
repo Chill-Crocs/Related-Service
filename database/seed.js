@@ -32,30 +32,20 @@ const generateItems = () => {
   const items = [];
   let i = 0;
 
-  while (i < 5) {
-    const newTags = generateTags();
-    const newPrice = faker.commerce.price();
-    const newImageUrl = faker.image.image();
-    const newDescription = faker.commerce.productDescription();
-    const newDetails = generateDetails();
-    const newAvailability = Math.random() < 0.5;
-    const newSeller = faker.lorem.words();
-    const newShippingStatus = 'Free shipping eligible';
-    const newFavorite = Math.random() < 0.5;
-
+  while (i < 101) {
     items.push(
       {
         info: {
-          tags: newTags,
-          price: newPrice,
-          imageUrl: newImageUrl,
-          description: newDescription,
-          details: newDetails,
-          availability: newAvailability,
+          tags: generateTags(),
+          price: faker.commerce.price(),
+          imageUrl: faker.image.image(),
+          description: faker.commerce.productDescription(),
+          details: generateDetails(),
+          availability: Math.random() < 0.5,
         },
-        seller: newSeller,
-        shippingStatus: newShippingStatus,
-        favorite: newFavorite,
+        seller: faker.lorem.words(),
+        shippingStatus: 'Free shipping eligible',
+        favorite: Math.random() < 0.5,
       },
     );
 
