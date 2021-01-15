@@ -18,6 +18,9 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    "ignorePatterns": [
+        "tests", "jest.config.js", "jest-mongodb-config.js"
+    ],
     "rules": {
         'no-console': 'off'
     }
