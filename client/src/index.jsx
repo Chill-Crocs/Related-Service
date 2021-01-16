@@ -2,4 +2,5 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const selectedItem = 0;
+ReactDOM.render(<App selectedItem={selectedItem} />, document.getElementById('app'));

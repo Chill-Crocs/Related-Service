@@ -6,7 +6,7 @@ const IndividualItem = (props) => {
   return (
     <div>
       <div><img src={item.imageUrl} alt={item._id} /></div>
-      <div>{item.description}</div>
+      <div>{`${item.tags[0]} | ${item.tags[1]} | ${item.tags[2]}`}</div>
     </div>
   );
 };
