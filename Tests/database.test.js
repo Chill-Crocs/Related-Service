@@ -1,5 +1,4 @@
-// const { MongoClient } = require('mongodb');
-const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb');
 const databaseName = 'Related';
 
 describe ('insert', () => {
@@ -7,24 +6,20 @@ describe ('insert', () => {
     let db;
 
     beforeAll(async () => {
-        // connection = await MongoClient.connect('mongodb://localhost/Related', { useNewUrlParser: true, useUnifiedTopology: true });
-        // db = await connection.db();
-        const url = `mongodb://localhost/${databaseName}`;
-        await mongoose.connect(url, { useNewUrlParser: true })
-
+        connection = await MongoClient.connect('mongodb://localhost/Related', { useNewUrlParser: true, useUnifiedTopology: true });
+        db = await connection.db();
     });
 
     afterAll(async () => {
-        // await connection.close();
-        // await db.close();
-        await mongoose.connection.close();
+        await connection.close();
+        await db.close();
     });
 
     it('should return count of doc in collection', async () => {
         const items = db.collection('relateditems');
         const dbCount = await items.count();
 
-        expect(dbCount).toEqual(217);
+        expect(dbCount).toEqual(100);
     })
 
 })
