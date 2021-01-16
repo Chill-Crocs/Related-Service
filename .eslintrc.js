@@ -19,9 +19,10 @@ module.exports = {
         "react"
     ],
     "ignorePatterns": [
-        "tests", "jest.config.js", "jest-mongodb-config.js"
+        "tests", "jest.config.js", "jest-mongodb-config.js", 'webpack.config.js'
     ],
     "rules": {
-        'no-console': 'off'
+        'no-console': 'off',
+        'no-underscore-dangle': ["error", {"allow": ["_id"]}]
     }
 };
