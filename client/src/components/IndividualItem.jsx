@@ -7,6 +7,9 @@ const IndividualItem = (props) => {
     <div>
       <div><img src={item.imageUrl} alt={item._id} /></div>
       <div>{`${item.tags[0]} | ${item.tags[1]} | ${item.tags[2]}`}</div>
+      <div>{item.seller}</div>
+      <div>{item.price}</div>
+      <div>{item.shippingStatus}</div>
     </div>
   );
 };

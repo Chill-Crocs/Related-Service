@@ -1,47 +1,75 @@
+html {
+    box-sizing: border-box;
+  }
+
+.items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    min-width: 0px;
+    max-width: 1400px;
+    margin: auto;
+    flex-shrink: 2;
+}
+
 .related-allItems {
     display: grid;
     grid-template-columns: 50%, 50%;
     grid-template-rows: 15%, 85%;
-    /* min-height: 500px;
-    min-width: 0px;
-    max-width: 100%;
-    max-height: 600px; */
 }
 
 .related-fromShop {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: end;
+    padding-right: 30px;
 }
+
+
 
 .related-items {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: start;
+    padding-left: 30px;
 }
 
 .related-fromShopHeader {
     grid-column: 1 / 2;
     grid-row: 1/ 2;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-end;
+    margin: 0;
+
 }
 
 .related-relatedHeader {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 45px;
+    align-self: flex-end;
+    margin: 0;
 }
 
 .related-shopIndividualItem {
     padding: 9px;
+    display: flex;
+    flex-shrink: 1;
 }
 
 .related-relatedIndividualItem{
     padding: 9px;
+    display: flex;
+    flex-shrink: 1;
 }
 
 
@@ -51,11 +79,5 @@ img {
     min-height: 100px;
     max-width: 300px;
     max-height: 250px;
+    border-radius: 9px;
 }
-
-/* 
-@media (min-width: 1500px) {
-    .related-shopIndividualItem, .related-relatedIndividualItem {
-        flex-shrink: 1 !important;
-    }
-} */
