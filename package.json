@@ -36,6 +36,7 @@
     "jest-puppeteer": "^4.4.0",
     "mongoose": "^5.11.11",
     "nodemon": "^1.19.3",
+    "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   }
