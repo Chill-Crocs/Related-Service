@@ -44,7 +44,7 @@ const generateFromThisShop = () => {
       availability: Math.random() < 0.5,
       seller: shopName,
       shippingStatus: 'Free shipping eligible',
-      favorite: Math.random() < 0.5,
+      favorite: false,
     });
     i += 1;
     itemNum += 1;
@@ -81,4 +81,5 @@ const generateRelatedItems = () => {
 module.exports = {
   relatedItems: generateRelatedItems,
   fromShop: generateFromThisShop,
+  tags: generateTags,
 };
