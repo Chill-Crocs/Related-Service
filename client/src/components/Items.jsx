@@ -8,16 +8,14 @@ const Items = (props) => {
   return (
     <div className="related-allItems">
       <h4 className="related-fromShopHeader">More from this shop</h4>
-      <div className="related-fromShopParent">
-        <div className="related-fromShop">
-          {fromShop.slice(0, 4).map((item, index) => (
-            <div key={`shop${item._id}`} className="related-shopIndividualItem" id={`fromShop${index}`}>
-              <IndividualItem
-                item={item}
-              />
-            </div>
-          ))}
-        </div>
+      <div className="related-fromShop">
+        {fromShop.slice(0, 4).map((item, index) => (
+          <div key={`shop${item._id}`} className="related-shopIndividualItem" id={`fromShop${index}`}>
+            <IndividualItem
+              item={item}
+            />
+          </div>
+        ))}
       </div>
       <h4 className="related-relatedHeader">Other items for you</h4>
       <div className="related-items">
