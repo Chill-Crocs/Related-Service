@@ -28,8 +28,6 @@ html {
     padding-right: 30px;
 }
 
-
-
 .related-items {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -66,18 +64,14 @@ html {
     flex-shrink: 1;
 }
 
-.related-relatedIndividualItem{
+.related-relatedIndividualItem {
     padding: 9px;
     display: flex;
     flex-shrink: 1;
 }
 
-
 img {
     display: flex;
-    min-width: 150px;
-    min-height: 100px;
-    max-width: 300px;
-    max-height: 250px;
+    max-width: 100%;
     border-radius: 9px;
 }
