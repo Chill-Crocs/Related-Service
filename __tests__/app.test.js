@@ -11,4 +11,5 @@ describe('App', () => {
     expect(screen.getByText('More from this shop')).toBeInTheDocument();
     expect(screen.getByText('Other items for you')).toBeInTheDocument();
   });
+
 });
