@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 const IndividualItem = (props) => {
   const { item } = props;
   return (
-    <div>
+    <div className="related-IndividualItemDisp">
       <div><img src={item.imageUrl} alt={item._id} /></div>
-      <div>{`${item.tags[0]} | ${item.tags[1]} | ${item.tags[2]}`}</div>
-      <div>{item.seller}</div>
-      <div>{item.price}</div>
-      <div>{item.shippingStatus}</div>
+      <h3 className="related-itemCaption">{`${item.tags[0]} | ${item.tags[1]} | ${item.tags[2]}`}</h3>
+      <div className="related-seller">{item.seller}</div>
+      <div className="related-price">{`$${(item.price / 50).toFixed(2)}`}</div>
+      <div className="related-shippingStatus">{item.shippingStatus}</div>
     </div>
   );
 };
@@ -20,7 +20,7 @@ IndividualItem.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string),
     price: PropTypes.number,
     imageUrl: PropTypes.string,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     details: PropTypes.arrayOf(PropTypes.string),
     seller: PropTypes.string,
     shippingStatus: PropTypes.string,

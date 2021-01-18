@@ -1,7 +1,14 @@
-html {
+body {
     box-sizing: border-box;
+    margin: 0;
   }
 
+#app {
+    background-color: #F8EBE6;
+    margin: 0;
+}
+
+/* All items containers */
 .items {
     display: flex;
     justify-content: center;
@@ -18,6 +25,7 @@ html {
     grid-template-rows: 15%, 85%;
 }
 
+/* FROM SHOP */
 .related-fromShop {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -25,17 +33,7 @@ html {
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     justify-content: end;
-    padding-right: 30px;
-}
-
-.related-items {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    justify-content: start;
-    padding-left: 30px;
+    padding-right: 25px;
 }
 
 .related-fromShopHeader {
@@ -44,8 +42,25 @@ html {
     display: flex;
     justify-content: flex-start;
     align-self: flex-end;
+    padding-left: 10px;
     margin: 0;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 150;
+    /* font-family: 'Halant', serif; */
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
 
+}
+
+/* RELATED FOR YOU*/
+.related-items {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: start;
+    padding-left: 25px;
 }
 
 .related-relatedHeader {
@@ -53,21 +68,70 @@ html {
     grid-row: 1 / 2;
     display: flex;
     justify-content: flex-start;
-    padding-left: 45px;
+    padding-left: 35px;
     align-self: flex-end;
+    margin: 0;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 150;
+    /* font-family: 'Halant', serif; */
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+
+}
+
+/* INDIVIDUAL ITEMS  */
+.related-shopIndividualItem, .related-relatedIndividualItem {
+    padding: 9px;
+    display: flex;
+    flex-shrink: 1;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 18px;
+    z-index: 0;
+}
+
+.related-itemCaption {
+    font-weight: 300;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
     margin: 0;
 }
 
-.related-shopIndividualItem {
-    padding: 9px;
-    display: flex;
-    flex-shrink: 1;
+.related-seller {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 18px;
+    color: #595959 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
+    display: block;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
-.related-relatedIndividualItem {
-    padding: 9px;
-    display: flex;
-    flex-shrink: 1;
+.related-price {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222 !important;
+}
+
+.related-shippingStatus {
+    color: #595959 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 img {
@@ -75,3 +139,34 @@ img {
     max-width: 100%;
     border-radius: 9px;
 }
+
+/* HOVER CARD */
+.related-hoverCard {
+    z-index: 1;
+    position:relative;
+}
+
+.related-hoverCard::before {
+    content: "";
+    z-index: -1;
+}
+
+.related-hoverCard:hover::before {
+    content: "";
+    opacity: 1;
+    z-index: -1;
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    bottom: -9px;
+    left: -6px;
+    width: 103%;
+    height: 102%;
+    transform: scale(0.96);
+    transition: transform 300ms;
+    background: white;
+    border: 1px dotted transparent;
+    border-radius: 9px;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+}
+
