@@ -108,7 +108,7 @@ body {
     color: #595959 !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    white-space: nowrap !important;
+    /* white-space: nowrap !important; */
     min-width: 0 !important;
     display: block;
     margin-block-end: 0.5em;
@@ -144,11 +144,6 @@ img {
 .related-hoverCard {
     z-index: 1;
     position:relative;
-}
-
-.related-hoverCard::before {
-    content: "";
-    z-index: -1;
 }
 
 .related-hoverCard:hover::before {
