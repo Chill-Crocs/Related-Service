@@ -69,7 +69,7 @@ const generateRelatedItems = () => {
       availability: Math.random() < 0.5,
       seller: faker.company.companyName(),
       shippingStatus: 'Free shipping eligible',
-      favorite: Math.random() < 0.5,
+      favorite: false,
     });
 
     i += 1;
