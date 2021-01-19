@@ -2,10 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const IndividualItem = (props) => {
-  const { item } = props;
+  const { item, shop, toggleFavorite } = props;
+
   return (
     <div className="related-IndividualItemDisp">
-      <div><img src={item.imageUrl} alt={item._id} /></div>
+      <div className="related-imageButton">
+        <img src={item.imageUrl} alt={item._id} />
+        <div className="related-favoriteContainer">
+          {item.favorite ? <button type="button" className="related-favorited"><i className="fa fa-heart" /></button>
+            : <button type="button" className="related-nonFavorite" data-id={item._id} onClick={(e) => { e.preventDefault(), console.log(props.item.favorite); }}><i className="far fa-heart" /></button>}
+        </div>
+      </div>
       <h3 className="related-itemCaption">{`${item.tags[0]} | ${item.tags[1]} | ${item.tags[2]}`}</h3>
       <div className="related-seller">{item.seller}</div>
       <div className="related-price">{`$${(item.price / 50).toFixed(2)}`}</div>
@@ -26,6 +33,7 @@ IndividualItem.propTypes = {
     shippingStatus: PropTypes.string,
     favorite: PropTypes.bool,
   }),
+  toggleFavorite: PropTypes.func,
 };
 
 IndividualItem.defaultProps = {
@@ -40,6 +48,7 @@ IndividualItem.defaultProps = {
     shippingStatus: '',
     favorite: false,
   },
+  toggleFavorite: () => {},
 };
 
 export default IndividualItem;

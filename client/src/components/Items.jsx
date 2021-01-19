@@ -3,29 +3,40 @@ import PropTypes from 'prop-types';
 import IndividualItem from './IndividualItem';
 
 const Items = (props) => {
-  const { related, fromShop } = props;
+  const { related, fromShop, toggleFavorite } = props;
 
   return (
     <div className="related-allItems">
-      <h3 className="related-fromShopHeader">More from this shop</h3>
+      <div className="related-fromShopHeaderBar">
+        <h3 className="related-fromShopHeader">More from this shop</h3>
+        <button type="button" className="related-showMore">See more</button>
+      </div>
       <div className="related-fromShop">
         {fromShop.slice(0, 4).map((item) => (
-          <div className="related-hoverCard">
-            <div key={`shop${item._id}`} className="related-shopIndividualItem">
+          <div className="related-hoverCard" key={`shop_${item._id}`}>
+            <div className="related-shopIndividualItem">
               <IndividualItem
                 item={item}
+                toggleFavorite={toggleFavorite}
+                shop="shopItems"
+                itemFavorite={false}
               />
             </div>
           </div>
         ))}
       </div>
-      <h3 className="related-relatedHeader">You may also like</h3>
+      <div className="related-HeaderBar">
+        <h3 className="related-relatedHeader">You may also like</h3>
+        <button type="button" className="related-showMore">See more</button>
+      </div>
       <div className="related-items">
         {related.slice(0, 4).map((item) => (
-          <div className="related-hoverCard">
-            <div key={`related${item._id}`} className="related-relatedIndividualItem">
+          <div className="related-hoverCard" key={`related_${item._id}`}>
+            <div className="related-relatedIndividualItem">
               <IndividualItem
                 item={item}
+                toggleFavorite={toggleFavorite}
+                shop="relatedItems"
               />
             </div>
           </div>
@@ -58,6 +69,7 @@ Items.propTypes = {
     shippingStatus: PropTypes.string,
     favorite: PropTypes.bool,
   })),
+  toggleFavorite: PropTypes.func,
 };
 
 Items.defaultProps = {
@@ -85,6 +97,7 @@ Items.defaultProps = {
       favorite: false,
     },
   ],
+  toggleFavorite: () => {},
 };
 
 export default Items;
