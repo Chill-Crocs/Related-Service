@@ -6,7 +6,7 @@ import IndividualItem from '../client/src/components/IndividualItem';
 
 const item = {
   _id: 10,
-  tags: ['Dogs', 'Cats', 'Pigs'],
+  name: 'test text here',
   price: 10.99,
   imageUrl: 'http://placeimg.com/640/480/transport',
   description: 'Dogs, cats, pigs',
@@ -30,9 +30,9 @@ describe('Individual Items', () => {
       expect(favoriteHandler).toHaveBeenCalledTimes(1);
     });
 
-    test('displays description for the item', () => {
+    test('displays name for the item', () => {
       const { getByText } = render(<IndividualItem item={item} />);
-      getByText('Dogs | Cats | Pigs');
+      getByText('test text here');
     })
   
   });

@@ -40,7 +40,7 @@ const Items = ({ forYou, fromShop }) => (
 Items.propTypes = {
   forYou: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.number,
-    tags: PropTypes.arrayOf(PropTypes.string),
+    name: PropTypes.string,
     price: PropTypes.number,
     imageUrl: PropTypes.string,
     description: PropTypes.string,
@@ -50,7 +50,7 @@ Items.propTypes = {
   })),
   fromShop: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.number,
-    tags: PropTypes.arrayOf(PropTypes.string),
+    name: PropTypes.string,
     price: PropTypes.number,
     imageUrl: PropTypes.string,
     description: PropTypes.string,
@@ -63,7 +63,7 @@ Items.propTypes = {
 Items.defaultProps = {
   forYou: [
     {
-      tags: [''],
+      name: '',
       price: null,
       imageUrl: '',
       description: '',
@@ -74,7 +74,7 @@ Items.defaultProps = {
   ],
   fromShop: [
     {
-      tags: [''],
+      name: '',
       price: null,
       imageUrl: '',
       description: '',

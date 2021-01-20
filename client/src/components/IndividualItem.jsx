@@ -39,7 +39,7 @@ const IndividualItem = ({ item }) => {
             )}
         </div>
       </div>
-      <h3 className="related-itemCaption">{item.tags}</h3>
+      <h3 className="related-itemCaption">{item.name}</h3>
       <div className="related-seller">{item.seller}</div>
       <div className="related-price">{`$${(item.price / 50).toFixed(2)}`}</div>
       <div className="related-shippingStatus">{item.shippingStatus}</div>
@@ -50,7 +50,7 @@ const IndividualItem = ({ item }) => {
 IndividualItem.propTypes = {
   item: PropTypes.shape({
     _id: PropTypes.number,
-    tags: PropTypes.arrayOf(PropTypes.string),
+    name: PropTypes.string,
     price: PropTypes.number,
     imageUrl: PropTypes.string,
     description: PropTypes.string,
@@ -63,7 +63,7 @@ IndividualItem.propTypes = {
 IndividualItem.defaultProps = {
   item: {
     _id: null,
-    tags: [''],
+    name: '',
     price: null,
     imageUrl: '',
     description: '',

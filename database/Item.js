@@ -9,7 +9,7 @@ const RelatedSchema = new mongoose.Schema({
   relatedItems: [
     {
       _id: Number,
-      tags: [String],
+      name: String,
       price: Number,
       imageUrl: String,
       description: String,
@@ -22,7 +22,7 @@ const RelatedSchema = new mongoose.Schema({
   shopItems: [
     {
       _id: Number,
-      tags: [String],
+      name: String,
       price: Number,
       imageUrl: String,
       description: String,
