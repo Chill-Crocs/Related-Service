@@ -10,7 +10,7 @@
     "build": "webpack -w",
     "db:setup": "node database/seed.js",
     "start": "nodemon server",
-    "test": "jest"
+    "test": "jest --collectCoverage"
   },
   "dependencies": {
     "axios": "^0.21.1",
