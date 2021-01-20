@@ -9,13 +9,11 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      parentId: null,
-      related: [],
+      forYou: [],
       fromShop: [],
     };
 
     this.getRelated = this.getRelated.bind(this);
-    // this.toggleFavorite = this.toggleFavorite.bind(this);
   }
 
   componentDidMount() {
@@ -27,27 +25,18 @@ class App extends React.Component {
     axios.get(`/api/relatedItems/${selectedItem}`)
       .then((response) => {
         this.setState({
-          parentId: response.data._id,
-          related: response.data.relatedItems,
+          forYou: response.data.relatedItems,
           fromShop: response.data.shopItems,
         });
       });
   }
 
-  // toggleFavorite(favoriteId, currentState) {
-  //   const { parentId } = this.state;
-  //   axios.patch(`/api/relatedItems/${parentId}/${favoriteId}`)
-  //     .then((response) => {
-  //       console.log(`this is a test: ${response}`);
-  //     });
-  // }
-
   render() {
-    const { related, fromShop, toggleFavorite } = this.state;
+    const { forYou, fromShop } = this.state;
     return (
       <div>
         <Header />
-        <div className="items"><Items related={related} fromShop={fromShop} /></div>
+        <div className="items" data-testid="itemsHolder"><Items forYou={forYou} fromShop={fromShop} /></div>
       </div>
     );
   }

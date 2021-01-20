@@ -1,16 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const IndividualItem = (props) => {
-  const { item, shop, toggleFavorite } = props;
+const IndividualItem = ({ item }) => {
+  const [favorite, setFavorite] = useState(false);
+
+  const toggleFavorite = (id) => {
+    setFavorite({ ...favorite, [id]: !favorite[id] });
+  };
 
   return (
     <div className="related-IndividualItemDisp">
       <div className="related-imageButton">
-        <img src={item.imageUrl} alt={item._id} />
-        <div className="related-favoriteContainer">
-          {item.favorite ? <button type="button" className="related-favorited"><i className="fa fa-heart" /></button>
-            : <button type="button" className="related-nonFavorite" data-id={item._id} onClick={(e) => { e.preventDefault(), console.log(props.item.favorite); }}><i className="far fa-heart" /></button>}
+        <img src={item.imageUrl} alt="product" />
+        <div className="related-favoriteContainer" role="button">
+          {favorite[item._id] ? (
+            <button
+              type="button"
+              className="related-favorited"
+              data-testid="favoriteButton"
+              id="favoriteButton"
+              onClick={(e) => { toggleFavorite(e.target.dataset.id); }}
+            >
+              <i className="fa fa-heart" data-id={item._id} />
+            </button>
+          )
+            : (
+              <button
+                type="button"
+                className="related-nonFavorite"
+                data-testid="notFavoriteButton"
+                onClick={(e) => { toggleFavorite(e.target.dataset.id); }}
+              >
+                <i
+                  className="far fa-heart"
+                  data-id={item._id}
+                />
+              </button>
+            )}
         </div>
       </div>
       <h3 className="related-itemCaption">{`${item.tags[0]} | ${item.tags[1]} | ${item.tags[2]}`}</h3>
@@ -31,9 +57,7 @@ IndividualItem.propTypes = {
     details: PropTypes.arrayOf(PropTypes.string),
     seller: PropTypes.string,
     shippingStatus: PropTypes.string,
-    favorite: PropTypes.bool,
   }),
-  toggleFavorite: PropTypes.func,
 };
 
 IndividualItem.defaultProps = {
@@ -46,9 +70,7 @@ IndividualItem.defaultProps = {
     details: [''],
     seller: '',
     shippingStatus: '',
-    favorite: false,
   },
-  toggleFavorite: () => {},
 };
 
 export default IndividualItem;
