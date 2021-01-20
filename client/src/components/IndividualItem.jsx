@@ -39,7 +39,7 @@ const IndividualItem = ({ item }) => {
             )}
         </div>
       </div>
-      <h3 className="related-itemCaption">{`${item.tags[0]} | ${item.tags[1]} | ${item.tags[2]}`}</h3>
+      <h3 className="related-itemCaption">{item.tags}</h3>
       <div className="related-seller">{item.seller}</div>
       <div className="related-price">{`$${(item.price / 50).toFixed(2)}`}</div>
       <div className="related-shippingStatus">{item.shippingStatus}</div>

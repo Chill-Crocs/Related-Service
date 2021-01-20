@@ -119,7 +119,6 @@ body {
     font-size: 13px;
     overflow: hidden;
     text-overflow: hidden !important;
-    white-space: nowrap !important;
     min-width: 0 !important;
     margin: 0;
 }
