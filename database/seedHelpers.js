@@ -44,7 +44,6 @@ const generateFromThisShop = () => {
       availability: Math.random() < 0.5,
       seller: shopName,
       shippingStatus: 'Free shipping eligible',
-      favorite: false,
     });
     i += 1;
     itemNum += 1;
@@ -69,7 +68,6 @@ const generateRelatedItems = () => {
       availability: Math.random() < 0.5,
       seller: faker.company.companyName(),
       shippingStatus: 'Free shipping eligible',
-      favorite: false,
     });
 
     i += 1;
