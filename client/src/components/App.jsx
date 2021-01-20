@@ -2,13 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Items from './Items';
+import Header from './Header';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      related: [],
+      forYou: [],
       fromShop: [],
     };
 
@@ -24,16 +25,19 @@ class App extends React.Component {
     axios.get(`/api/relatedItems/${selectedItem}`)
       .then((response) => {
         this.setState({
-          related: response.data.relatedItems,
+          forYou: response.data.relatedItems,
           fromShop: response.data.shopItems,
         });
       });
   }
 
   render() {
-    const { related, fromShop } = this.state;
+    const { forYou, fromShop } = this.state;
     return (
-      <div className="items"><Items related={related} fromShop={fromShop} /></div>
+      <div>
+        <Header />
+        <div className="items" data-testid="itemsHolder"><Items forYou={forYou} fromShop={fromShop} /></div>
+      </div>
     );
   }
 }

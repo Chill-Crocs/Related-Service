@@ -8,6 +8,15 @@ body {
     margin: 0;
 }
 
+
+.related-header {
+    fill: #F8EBE6;
+    background-color: white;
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+}
+
 /* All items containers */
 .items {
     display: flex;
@@ -15,14 +24,17 @@ body {
     flex-wrap: nowrap;
     min-width: 0px;
     max-width: 1400px;
-    margin: auto;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
     flex-shrink: 2;
 }
 
 .related-allItems {
     display: grid;
-    grid-template-columns: 50%, 50%;
-    grid-template-rows: 15%, 85%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5% 95%;
 }
 
 /* FROM SHOP */
@@ -40,7 +52,7 @@ body {
     grid-column: 1 / 2;
     grid-row: 1/ 2;
     display: flex;
-    justify-content: flex-start;
+    justify-self: flex-start;
     align-self: flex-end;
     padding-left: 10px;
     margin: 0;
@@ -49,7 +61,6 @@ body {
     font-weight: 150;
     /* font-family: 'Halant', serif; */
     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-
 }
 
 /* RELATED FOR YOU*/
@@ -79,6 +90,19 @@ body {
 
 }
 
+.related-HeaderBar {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.related-fromShopHeaderBar {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+
+}
+
 /* INDIVIDUAL ITEMS  */
 .related-shopIndividualItem, .related-relatedIndividualItem {
     padding: 9px;
@@ -95,8 +119,7 @@ body {
     font-weight: 300;
     font-size: 13px;
     overflow: hidden;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
+    text-overflow: hidden !important;
     min-width: 0 !important;
     margin: 0;
 }
@@ -107,7 +130,7 @@ body {
     line-height: 18px;
     color: #595959 !important;
     overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    text-overflow: hidden !important;
     white-space: nowrap !important;
     min-width: 0 !important;
     display: block;
@@ -137,18 +160,87 @@ body {
 img {
     display: flex;
     max-width: 100%;
-    border-radius: 9px;
+    border-radius: 6px;
+}
+
+/* FAVORITES BUTTON */
+.related-imageButton {
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+}
+
+.related-nonFavorite {
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1.6em;
+}
+
+.related-favorited {
+    color: rgb(214, 86, 107);
+    border: none;
+    outline: none;
+    font-size: 1.6em;
+}
+
+.related-nonFavorite:hover {
+   transform: scale(1.1);
+} 
+
+.related-favoriteContainer {
+    display: none;
+}
+
+.related-hoverCard:hover .related-favoriteContainer {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: block;
+}
+
+/* SHOW MORE BUTTON*/
+.related-showMore {
+    font-size: 13px;
+    line-height: 1.4;
+    min-height: 36px;
+    min-width: 36px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid #222222;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 0;
+}
+
+.related-showMore:hover::after {
+    border: 4px solid #222222;
+    transform: scale(1.03);
+    content: "";
+    background: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 /* HOVER CARD */
 .related-hoverCard {
     z-index: 1;
     position:relative;
-}
-
-.related-hoverCard::before {
-    content: "";
-    z-index: -1;
+    cursor: pointer;
+    transition: 2s;
 }
 
 .related-hoverCard:hover::before {
@@ -163,10 +255,9 @@ img {
     width: 103%;
     height: 102%;
     transform: scale(0.96);
-    transition: transform 300ms;
     background: white;
     border: 1px dotted transparent;
-    border-radius: 9px;
+    border-radius: 6px;
     box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
 }
 
