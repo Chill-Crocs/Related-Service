@@ -38,7 +38,14 @@ const Modal = ({ show, closeModal, item }) => {
           data-testid="closeButton"
         >
           <span className="modal-svgHolder">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,6.293a1,1,0,0,0,1.414-1.414Z" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,6.293a1,1,0,0,0,1.414-1.414Z" />
+            </svg>
           </span>
         </div>
       </div>
@@ -73,7 +80,9 @@ const Modal = ({ show, closeModal, item }) => {
             </div>
             <div>{item[0].shippingStatus}</div>
           </div>
-          <div className="modal-addToCart"><button type="button" id="modal-button">Add to cart</button></div>
+          <div className="modal-addToCart">
+            <button type="button" id="modal-addToCartButton">Add to cart</button>
+          </div>
         </div>
         <div className="modal-mainImage">
           <img src={item[0].imageUrl[index]} alt="product-main" />
@@ -81,6 +90,7 @@ const Modal = ({ show, closeModal, item }) => {
             <button
               type="button"
               className="modal-favorite"
+              data-testid="favoriteFilledButton"
               onClick={() => { setFavorite(!favorite); }}
             >
               <i className="fa fa-heart" />
@@ -89,7 +99,8 @@ const Modal = ({ show, closeModal, item }) => {
             : (
               <button
                 type="button"
-                className="nonFavorited"
+                className="modal-nonFavorited"
+                data-testid="favoriteUnfilledButton"
                 onClick={() => { setFavorite(!favorite); }}
               >
                 <i className="far fa-heart" />
@@ -130,7 +141,11 @@ const Modal = ({ show, closeModal, item }) => {
             onKeyDown={handleImageChange}
             onClick={handleImageChange}
           >
-            <img data-id="2" src={item[0].imageUrl[2]} alt="product" />
+            <img
+              data-id="2"
+              src={item[0].imageUrl[2]}
+              alt="product"
+            />
           </div>
         </div>
       </div>

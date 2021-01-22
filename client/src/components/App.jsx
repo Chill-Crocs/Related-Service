@@ -58,7 +58,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div className="items" data-testid="itemsHolder"><Items forYou={forYou} fromShop={fromShop} openModal={this.openModal} /></div>
+        <div className="related-itemsContainer" data-testid="itemsHolder"><Items forYou={forYou} fromShop={fromShop} openModal={this.openModal} /></div>
         <div data-testid="modalHolder"><Modal show={show} closeModal={this.closeModal} item={currentItemLoc === 'shop' ? fromShop.filter((item) => item._id === currentItemId) : forYou.filter((item) => item._id === currentItemId)} /></div>
       </div>
     );
