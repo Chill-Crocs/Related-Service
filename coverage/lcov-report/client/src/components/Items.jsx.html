@@ -37,9 +37,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
@@ -145,7 +145,13 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,6 +178,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,30 +192,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,7 +249,7 @@
 import PropTypes from 'prop-types';
 import IndividualItem from './IndividualItem';
 &nbsp;
-const Items = ({ forYou, fromShop }) =&gt; (
+const Items = ({ forYou, fromShop, openModal }) =&gt; (
   &lt;div className="related-allItems"&gt;
     &lt;div className="related-fromShopHeaderBar"&gt;
       &lt;h3 className="related-fromShopHeader"&gt;More from this shop&lt;/h3&gt;
@@ -249,6 +261,8 @@ const Items = ({ forYou, fromShop }) =&gt; (
           &lt;div className="related-shopIndividualItem"&gt;
             &lt;IndividualItem
               item={item}
+              openModal={openModal}
+              loc="shop"
             /&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -264,6 +278,8 @@ const Items = ({ forYou, fromShop }) =&gt; (
           &lt;div className="related-relatedIndividualItem"&gt;
             &lt;IndividualItem
               item={item}
+              openModal={openModal}
+              loc="forYou"
             /&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -277,7 +293,7 @@ Items.propTypes = {
     _id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
-    imageUrl: PropTypes.string,
+    imageUrl: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
     details: PropTypes.arrayOf(PropTypes.string),
     seller: PropTypes.string,
@@ -287,12 +303,13 @@ Items.propTypes = {
     _id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
-    imageUrl: PropTypes.string,
+    imageUrl: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
     details: PropTypes.arrayOf(PropTypes.string),
     seller: PropTypes.string,
     shippingStatus: PropTypes.string,
   })),
+  openModal: PropTypes.func,
 };
 &nbsp;
 Items.defaultProps = {
@@ -300,7 +317,7 @@ Items.defaultProps = {
     {
       name: '',
       price: null,
-      imageUrl: '',
+      imageUrl: [''],
       description: '',
       details: [''],
       seller: '',
@@ -311,13 +328,14 @@ Items.defaultProps = {
     {
       name: '',
       price: null,
-      imageUrl: '',
+      imageUrl: [''],
       description: '',
       details: [''],
       seller: '',
       shippingStatus: '',
     },
   ],
+  openModal: <span class="fstat-no" title="function not covered" >()</span> =&gt; {},
 };
 &nbsp;
 export default Items;
@@ -328,7 +346,7 @@ export default Items;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jan 20 2021 14:13:22 GMT-0800 (Pacific Standard Time)
+                at Thu Jan 21 2021 21:47:59 GMT-0800 (Pacific Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
