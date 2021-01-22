@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-
+/****************************** HEADER/BANNER ******************************/
 .related-header {
     fill: #F8EBE6;
     background-color: white;
@@ -17,7 +17,7 @@ body {
     overflow: hidden;
 }
 
-/* All items containers */
+/****************************** All items containers ******************************/
 .items {
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@ body {
     grid-template-rows: 5% 95%;
 }
 
-/* FROM SHOP */
+/****************************** FROM SHOP ******************************/
 .related-fromShop {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -63,7 +63,7 @@ body {
     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
 }
 
-/* RELATED FOR YOU*/
+/****************************** RELATED FOR YOU ******************************/
 .related-items {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -103,7 +103,7 @@ body {
 
 }
 
-/* INDIVIDUAL ITEMS  */
+/****************************** INDIVIDUAL ITEMS  ******************************/
 .related-shopIndividualItem, .related-relatedIndividualItem {
     padding: 9px;
     display: flex;
@@ -119,8 +119,8 @@ body {
     font-weight: 300;
     font-size: 13px;
     overflow: hidden;
-    text-overflow: hidden !important;
-    min-width: 0 !important;
+    text-overflow: hidden;
+    min-width: 0;
     margin: 0;
 }
 
@@ -128,11 +128,11 @@ body {
     font-weight: 300;
     font-size: 13px;
     line-height: 18px;
-    color: #595959 !important;
-    overflow: hidden !important;
-    text-overflow: hidden !important;
-    white-space: nowrap !important;
-    min-width: 0 !important;
+    color: #595959;
+    overflow: hidden;
+    text-overflow: hidden;
+    white-space: nowrap;
+    min-width: 0;
     display: block;
     margin-block-end: 0.5em;
     margin-inline-start: 0px;
@@ -143,15 +143,15 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    color: #222 !important;
+    color: #222
 }
 
 .related-shippingStatus {
-    color: #595959 !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    min-width: 0 !important;
+    color: #595959;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
     font-weight: 300;
     font-size: 13px;
     line-height: 18px;
@@ -163,7 +163,7 @@ img {
     border-radius: 6px;
 }
 
-/* FAVORITES BUTTON */
+/****************************** FAVORITES BUTTON  ******************************/
 .related-imageButton {
     position: relative;
 }
@@ -202,7 +202,7 @@ button {
     display: block;
 }
 
-/* SHOW MORE BUTTON*/
+/****************************** SHOW MORE BUTTON ******************************/
 .related-showMore {
     font-size: 13px;
     line-height: 1.4;
@@ -235,7 +235,9 @@ button {
     z-index: 1;
 }
 
-/* HOVER CARD */
+
+/****************************** HOVER CARD ******************************/
+
 .related-hoverCard {
     z-index: 1;
     position:relative;
@@ -261,3 +263,290 @@ button {
     box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
 }
 
+/****************************** REMOVE OUTLINE FROM MODAL CLICK ******************************/
+span {
+    outline: none;
+    border: none;
+}
+
+.related-modalClick {
+    outline: none;
+    border: none;
+}
+
+/****************************** MODAL ******************************/
+.related-modalContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 0px;
+    position: fixed; 
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.7); 
+}
+
+.related-modal-Header {
+    width: 35%;
+    display: grid;
+    align-self: center;
+    position: relative;
+    background-color: transparent;
+}
+
+.modal-allInformation{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 70% 30%;
+    width: 40%;
+    height: 50%;
+    background-color: #F8EBE6;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+}
+
+.modal-allInformation::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    width: 105%;
+    height: 105%;
+    background-color: rgb(252, 247, 247);
+    border-radius: 6px;
+    justify-self: center;
+    top: -12px;
+    border: 4px dotted #e9d5cc;
+}
+
+.modal-allInformation:hover::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    width: 105%;
+    height: 105%;
+    background-color: rgb(252, 247, 247);
+    border-radius: 6px;
+    justify-self: center;
+    top: -12px;
+    border: 4px dotted #e9d5cc;;
+    /* transform: scale(1.01); */
+}
+
+.modal-textInformation{
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+
+.modal-mainImage {
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 95%;
+    height: 95%;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    box-shadow: 0 4px 18px rgba(34, 34, 34, 0.2);
+    position: relative;
+}
+
+.nonFavorited {
+    position: absolute;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1.8em;
+    top: 10px;
+    right: 10px;
+}
+
+.nonFavorited:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.modal-favorite {
+    position: absolute;
+    color: rgb(214, 86, 107);;
+    border: none;
+    outline: none;
+    font-size: 1.8em;
+    top: 10px;
+    right: 10px;
+}
+.modal-images {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding-top: 5px;
+    grid-template-columns: 33% 33% 33%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+#smallImg1 {
+    grid-column: 1 / 2;
+    padding-left: 5px;
+    padding-right: 2px;
+    height: 80%;
+    width: 80%;
+    cursor: pointer;
+    display: flex;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+    position: relative;
+    z-index: 0;
+    outline: none;
+}
+ #smallImg2 {
+    padding-right: 2px;
+    padding-left: 2px;
+    margin: 0;
+    display: flex;
+    grid-column: 2 / 3;
+    height: 80%;
+    width: 80%;
+    cursor: pointer;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+    position: relative;
+    outline:  none;
+}
+
+#smallImg3 {
+    padding-left: 2px;
+    padding-right: 5px;
+    margin: 0;
+    display: flex;
+    grid-column: 3 / 4;
+    height: 80%;
+    width: 80%;
+    cursor: pointer;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+    position: relative;
+    outline: none;
+}
+
+#smallImg1:hover, #smallImg2:hover, #smallImg3:hover {
+    transform: scale(0.99)
+}
+
+.modal-buttonClose{
+    position: absolute;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    vertical-align: middle;
+    width: 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    z-index: 1000;
+    background-color: white;
+    line-height: 1;
+    padding: 12px;
+    top: 0px;
+    right: 0px;
+}
+
+.modal-svgHolder {
+    height: 24px;
+    width: 24px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.modal-informationHeader {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #222222;
+}
+
+.modal-truck {
+    padding-right: 5px;
+}
+
+.modal-namePrice {
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modal-itemName {
+    grid-row: 1 / 2;
+    display: flex;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+.modal-seller {
+    grid-row: 2 / 3;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+}
+
+#modal-price {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    color: #222222;
+    padding-right: 10px;
+}
+
+#modal-details {
+    grid-row: 3/ 4;
+    display: flex;
+    align-self: flex-start;
+}
+
+#modal-description {
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+    grid-row: 4 / 5;
+    display: flex;
+    align-self: flex-start;
+}
+
+.modal-shipping {
+    grid-row: 5 / 6;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-addToCart {
+    grid-row: 6 / 7;
+}
+
+#modal-button {
+    color: #FFFFFF;
+    padding-right: 10px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 60%;
+    background: #222222;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+}
