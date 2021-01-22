@@ -29,10 +29,17 @@ const item = [{
         const { getByTestId } = render(<Modal item={item} onClick={handleClose()} show={show} />);
         fireEvent.click(getByTestId('closeButton'));
         expect(handleClose).toHaveBeenCalledTimes(1);
-        screen.debug;
+      });
+    
+      test('favorite button functionality', () => {
+        const setFavorite = jest.fn();
+    
+        const { getByTestId } = render(<Modal item={item} onClick={setFavorite()} show={show} />);
+        fireEvent.click(getByTestId('favoriteUnfilledButton'));
+        expect(setFavorite).toHaveBeenCalledTimes(1);
       });
 
-      test('displays name for the item', () => {
+    test('displays name for the item', () => {
         const { getByText } = render(<Modal item={item} show={show}/>);
         expect(getByText('test text here')).toBeInTheDocument;
       })

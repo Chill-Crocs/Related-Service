@@ -10,14 +10,5 @@ describe('App', () => {
     expect(queryByTestId('itemsHolder')).toBeTruthy();
     expect(queryByTestId('modalHolder')).toBeTruthy();
   });
-
-  // test('Updates state on Close Modal function', done => {
-  //   const app = new App({ close: jest.fn() })
-  //   jest.spyOn(app, 'setState').mockImplementation(function (fn) {
-  //     expect(fn(this.state)).toEqual({ show: true })
-  //     done()
-  //   })
-  //   app.closeModal()
-  // })
 });
 
