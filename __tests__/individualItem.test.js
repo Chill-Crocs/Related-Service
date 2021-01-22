@@ -1,6 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import { fireEvent, getByTestId, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import IndividualItem from '../client/src/components/IndividualItem';
 
@@ -8,7 +7,7 @@ const item = {
   _id: 10,
   name: 'test text here',
   price: 10.99,
-  imageUrl: 'http://placeimg.com/640/480/transport',
+  imageUrl: ['http://placeimg.com/640/480/transport', 'http://placeimg.com/640/480/transport', 'http://placeimg.com/640/480/transport'],
   description: 'Dogs, cats, pigs',
   details: ['Handmade', 'Hipster Approved'],
   seller: 'Test shop',
@@ -22,7 +21,6 @@ describe('Individual Items', () => {
     });
 
     test('favorites button functionality', () => {
-      const favoriteButton = document.getElementById('favoriteButton');
       const favoriteHandler = jest.fn();
   
       const { getByTestId } = render(<IndividualItem item={item} onClick={favoriteHandler()} />);
@@ -30,9 +28,17 @@ describe('Individual Items', () => {
       expect(favoriteHandler).toHaveBeenCalledTimes(1);
     });
 
+    test('Image click for modal popup functionality', () => {
+      const openModal = jest.fn();
+
+      const { getByTestId } = render(<IndividualItem item={item} onClick={openModal()} />);
+      fireEvent.click(getByTestId('openModal'));
+      expect(openModal).toHaveBeenCalledTimes(1);
+    })
+
     test('displays name for the item', () => {
       const { getByText } = render(<IndividualItem item={item} />);
-      getByText('test text here');
+      expect(getByText('test text here')).toBeInTheDocument;
     })
   
   });
