@@ -455,6 +455,7 @@ span {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     padding-top: 5px;
+    max-height: 100%;
 }
 
 .modal-mainImage {
@@ -464,9 +465,10 @@ span {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     position: relative;
-    margin: 0;
+    margin: auto;
     padding: 5px;
     padding-right: 5px;
+    max-height: 100%;
 }
 
 #smallImg1, #smallImg2, #smallImg3  {
