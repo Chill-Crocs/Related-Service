@@ -36,6 +36,7 @@ const Modal = ({ show, closeModal, item }) => {
           tabIndex={0}
           onKeyDown={handleClose}
           data-testid="closeButton"
+          style={{ outline: 'none' }}
         >
           <span className="modal-svgHolder">
             <svg
@@ -85,7 +86,7 @@ const Modal = ({ show, closeModal, item }) => {
           </div>
         </div>
         <div className="modal-mainImage">
-          <img src={item[0].imageUrl[index]} alt="product-main" />
+          <img src={item[0].imageUrl[index]} alt="product-main" id="related-images" />
           {favorite ? (
             <button
               type="button"
@@ -114,11 +115,13 @@ const Modal = ({ show, closeModal, item }) => {
             tabIndex={0}
             onKeyDown={handleImageChange}
             onClick={handleImageChange}
+            data-testid="imageChange"
           >
             <img
               data-id="0"
               src={item[0].imageUrl[0]}
               alt="product"
+              id="related-images"
             />
           </div>
           <div
@@ -132,6 +135,7 @@ const Modal = ({ show, closeModal, item }) => {
               data-id="1"
               src={item[0].imageUrl[1]}
               alt="product"
+              id="related-images"
             />
           </div>
           <div
@@ -145,6 +149,7 @@ const Modal = ({ show, closeModal, item }) => {
               data-id="2"
               src={item[0].imageUrl[2]}
               alt="product"
+              id="related-images"
             />
           </div>
         </div>

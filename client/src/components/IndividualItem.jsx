@@ -25,8 +25,10 @@ const IndividualItem = ({ item, loc, openModal }) => {
           tabIndex={0}
           onKeyDown={handleClick}
           data-testid="openModal"
+          style={{ outline: 'none' }}
         >
           <img
+            id="related-images"
             src={item.imageUrl[0]}
             alt="product"
             data-id={item._id}
