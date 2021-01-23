@@ -39,6 +39,14 @@ const item = [{
         expect(setFavorite).toHaveBeenCalledTimes(1);
       });
 
+      test('image change functionality', () => {
+        const handleImageChange = jest.fn();
+    
+        const { getByTestId } = render(<Modal item={item} onClick={handleImageChange()} show={show} />);
+        fireEvent.click(getByTestId('imageChange'));
+        expect(handleImageChange).toHaveBeenCalledTimes(1);
+      });
+
     test('displays name for the item', () => {
         const { getByText } = render(<Modal item={item} show={show}/>);
         expect(getByText('test text here')).toBeInTheDocument;

@@ -114,6 +114,7 @@ const Modal = ({ show, closeModal, item }) => {
             tabIndex={0}
             onKeyDown={handleImageChange}
             onClick={handleImageChange}
+            data-testid="imageChange"
           >
             <img
               data-id="0"
