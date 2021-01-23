@@ -254,7 +254,7 @@
     background-color: rgba(0,0,0,0.7); 
 }
 
-.modal-allInformation{
+.related-modalAllInformation{
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 70% 30%;
@@ -268,7 +268,7 @@
     box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
 }
 
-.modal-allInformation::before {
+.related-modalAllInformation::before {
     position: absolute;
     content: '';
     z-index: -1;
@@ -281,26 +281,18 @@
     border: 4px dotted #e9d5cc;
 }
 
-.related-modal-Header {
-    width: 35%;
-    display: grid;
-    align-self: center;
-    position: relative;
-    background-color: transparent;
-}
-
-.modal-textInformation {
+.related-modalTextInformation {
     display: grid;
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     overflow: scroll;
 }
 
-.modal-textInformation::-webkit-scrollbar {
+.related-modalTextInformation::-webkit-scrollbar {
     display: none;
 }
 
-.modal-buttonClose{
+.related-modalButtonClose{
     display: inline-block;
     position: absolute;
     vertical-align: middle;
@@ -316,40 +308,40 @@
     line-height: 1;
 }
 
-.modal-svgHolder {
+.related-modalSvgHolder {
     height: 24px;
     width: 24px;
     color: #222222;
     cursor: pointer;
 }
 
-.modal-informationHeader {
+.related-modalInformationHeader {
     font-size: 16px;
     font-weight: bold;
     line-height: 1.5;
     color: #222222;
 }
 
-.modal-truck {
+.related-modalTruck {
     padding-right: 5px;
 }
 
-.modal-namePrice {
+.related-modalNamePrice {
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
     grid-row: 1 / 2;
 }
-.modal-itemName {
+.related-modalItemName {
     display: flex;
     grid-row: 1 / 2;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 20px;
 }
 
-.modal-seller {
+.related-modalSeller {
     display: flex;
     align-self: flex-start;
     flex-direction: column;
@@ -357,30 +349,30 @@
     cursor: pointer;
 }
 
-#modal-price {
-    font-weight: 600;
+#related-modalPrice {
+    font-weight: 550;
     font-size: 20px;
     line-height: 20px;
     color: #222222;
-    padding-right: 10px;
+    padding-right: 8px;
 }
 
-#modal-details {
+#related-modalDetails {
     display: flex;
     align-self: flex-start;
     grid-row: 3/ 4;
 }
 
-#modal-description {
+#related-modalDescription {
     display: flex;
     align-self: flex-start;
     grid-row: 4 / 5;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #222222;
 }
 
-.modal-shipping {
+.related-modalShipping {
     display: flex;
     flex-direction: row;
     grid-row: 5 / 6;
@@ -389,11 +381,11 @@
     color: #222222;
 }
 
-.modal-addToCart {
+.related-modalAddToCart {
     grid-row: 6 / 7;
 }
 
-#modal-addToCartButton {
+#related-modalAddToCartButton {
     display: flex;
     place-items: center;
     justify-content: center;
@@ -408,10 +400,11 @@
     font-weight: bold;
     z-index: 0;
     padding: 15px;
+    cursor: pointer;
 }
 
 /****************************** MODAL IMAGES ******************************/
-.modal-images {
+.realted-modalImages {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     place-items: center;
@@ -422,7 +415,7 @@
     max-height: 100%;
 }
 
-.modal-mainImage {
+.related-modalMainImage {
     display: flex;
     align-self: center;
     justify-self: center;
@@ -435,7 +428,7 @@
     max-height: 100%;
 }
 
-#smallImg1, #smallImg2, #smallImg3  {
+#related-smallImg1, #related-smallImg2, #related-smallImg3  {
     display: flex;
     position: relative;
     margin: 0;
@@ -443,28 +436,28 @@
     cursor: pointer;
 }
 
-#smallImg1 {
+#related-smallImg1 {
     grid-column: 1 / 2;
     padding-right: 2px;
 }
- #smallImg2 {
+ #related-smallImg2 {
     padding-right: 2px;
     padding-left: 2px;
     grid-column: 2 / 3;
 }
 
-#smallImg3 {
+#related-smallImg3 {
     padding-left: 2px;
     grid-column: 3 / 4;
 }
 
-#smallImg1:hover, #smallImg2:hover, #smallImg3:hover {
+#related-smallImg1:hover, #related-smallImg2:hover, #related-smallImg3:hover {
     transform: scale(0.99)
 }
 
 /****************************** MODAL FAVORITE BUTTON ******************************/
 
-.modal-nonFavorited, .modal-favorite {
+.related-modalNonFavorited, .related-modalFavorite {
     position: absolute;
     top: 12px;
     right: 12px;
@@ -475,21 +468,14 @@
     cursor: pointer;
 }
 
-.modal-nonFavorited {
+.related-modalNonFavorited {
     color: white;
 }
 
-.modal-nonFavorited:hover {
+.related-modalNonFavorited:hover {
     transform: scale(1.01);
 }
 
-.modal-favorite {
+.related-modalFavorite {
     color: rgb(214, 86, 107);;
-}
-
-.modal-righClickSvgHolder {
-    height: 24px;
-    width: 24px;
-    color: #222222;
-    cursor: pointer;
 }

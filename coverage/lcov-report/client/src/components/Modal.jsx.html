@@ -472,7 +472,7 @@ const Modal = ({ show, closeModal, item }) =&gt; {
   }
   return (
     &lt;div className="related-modalContainer"&gt;
-      &lt;div className="modal-buttonClose"&gt;
+      &lt;div className="related-modalButtonClose"&gt;
         &lt;div
           role="button"
           onClick={handleClose}
@@ -481,7 +481,7 @@ const Modal = ({ show, closeModal, item }) =&gt; {
           data-testid="closeButton"
           style={{ outline: 'none' }}
         &gt;
-          &lt;span className="modal-svgHolder"&gt;
+          &lt;span className="related-modalSvgHolder"&gt;
             &lt;svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -493,47 +493,47 @@ const Modal = ({ show, closeModal, item }) =&gt; {
           &lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div className="modal-allInformation"&gt;
-        &lt;div className="modal-textInformation"&gt;
-          &lt;div className="modal-namePrice"&gt;
-            &lt;div className="modal-itemName"&gt;{item[0].name}&lt;/div&gt;
-            &lt;div id="modal-price"&gt;{`$${(item[0].price / 50).toFixed(2)}`}&lt;/div&gt;
+      &lt;div className="related-modalAllInformation"&gt;
+        &lt;div className="related-modalTextInformation"&gt;
+          &lt;div className="related-modalNamePrice"&gt;
+            &lt;div className="related-modalItemName"&gt;{item[0].name}&lt;/div&gt;
+            &lt;div id="related-modalPrice"&gt;{`$${(item[0].price / 50).toFixed(2)}`}&lt;/div&gt;
           &lt;/div&gt;
-          &lt;div className="modal-seller"&gt;
-            &lt;span className="modal-informationHeader"&gt;Seller&lt;/span&gt;
+          &lt;div className="related-modalSeller"&gt;
+            &lt;span className="related-modalInformationHeader"&gt;Seller&lt;/span&gt;
             &lt;span&gt;{item[0].seller}&lt;/span&gt;
           &lt;/div&gt;
           &lt;div&gt;
             &lt;div
-              className="modal-informationHeader"
-              id="modal-details"
+              className="related-modalInformationHeader"
+              id="related-modalDetails"
             &gt;
               Highlights
             &lt;/div&gt;
             &lt;div&gt;{separateDetails()}&lt;/div&gt;
           &lt;/div&gt;
           &lt;div&gt;
-            &lt;div className="modal-informationHeader"&gt;
+            &lt;div className="related-modalInformationHeader"&gt;
               Description
             &lt;/div&gt;
-            &lt;div id="modal-description"&gt;{item[0].description}&lt;/div&gt;
+            &lt;div id="related-modalDescription"&gt;{item[0].description}&lt;/div&gt;
           &lt;/div&gt;
-          &lt;div className="modal-shipping"&gt;
-            &lt;div className="modal-truck"&gt;
+          &lt;div className="related-modalShipping"&gt;
+            &lt;div className="related-modalTruck"&gt;
               &lt;i className="fas fa-truck" /&gt;
             &lt;/div&gt;
             &lt;div&gt;{item[0].shippingStatus}&lt;/div&gt;
           &lt;/div&gt;
-          &lt;div className="modal-addToCart"&gt;
-            &lt;button type="button" id="modal-addToCartButton"&gt;Add to cart&lt;/button&gt;
+          &lt;div className="related-modalAddToCart"&gt;
+            &lt;button type="button" id="related-modalAddToCartButton"&gt;Add to cart&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div className="modal-mainImage"&gt;
+        &lt;div className="related-modalMainImage"&gt;
           &lt;img src={item[0].imageUrl[index]} alt="product-main" id="related-images" /&gt;
           {favorite ? (
             &lt;button
               type="button"
-              className="modal-favorite"
+              className="related-modalFavorite"
               data-testid="favoriteFilledButton"
               onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; { <span class="cstat-no" title="statement not covered" >setFavorite(!favorite); </span>}}
             &gt;
@@ -543,7 +543,7 @@ const Modal = ({ show, closeModal, item }) =&gt; {
             : (
               &lt;button
                 type="button"
-                className="modal-nonFavorited"
+                className="related-modalNonFavorited"
                 data-testid="favoriteUnfilledButton"
                 onClick={() =&gt; { setFavorite(!favorite); }}
               &gt;
@@ -551,9 +551,9 @@ const Modal = ({ show, closeModal, item }) =&gt; {
               &lt;/button&gt;
             )}
         &lt;/div&gt;
-        &lt;div className="modal-images"&gt;
+        &lt;div className="realted-modalImages"&gt;
           &lt;div
-            id="smallImg1"
+            id="related-smallImg1"
             role="button"
             tabIndex={0}
             onKeyDown={handleImageChange}
@@ -568,7 +568,7 @@ const Modal = ({ show, closeModal, item }) =&gt; {
             /&gt;
           &lt;/div&gt;
           &lt;div
-            id="smallImg2"
+            id="related-smallImg2"
             role="button"
             tabIndex={0}
             onKeyDown={handleImageChange}
@@ -582,7 +582,7 @@ const Modal = ({ show, closeModal, item }) =&gt; {
             /&gt;
           &lt;/div&gt;
           &lt;div
-            id="smallImg3"
+            id="related-smallImg3"
             role="button"
             tabIndex={0}
             onKeyDown={handleImageChange}
@@ -640,7 +640,7 @@ export default Modal;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Jan 23 2021 13:22:01 GMT-0800 (Pacific Standard Time)
+                at Sat Jan 23 2021 15:47:20 GMT-0800 (Pacific Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

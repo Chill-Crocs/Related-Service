@@ -29,7 +29,7 @@ const Modal = ({ show, closeModal, item }) => {
   }
   return (
     <div className="related-modalContainer">
-      <div className="modal-buttonClose">
+      <div className="related-modalButtonClose">
         <div
           role="button"
           onClick={handleClose}
@@ -38,7 +38,7 @@ const Modal = ({ show, closeModal, item }) => {
           data-testid="closeButton"
           style={{ outline: 'none' }}
         >
-          <span className="modal-svgHolder">
+          <span className="related-modalSvgHolder">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -50,47 +50,47 @@ const Modal = ({ show, closeModal, item }) => {
           </span>
         </div>
       </div>
-      <div className="modal-allInformation">
-        <div className="modal-textInformation">
-          <div className="modal-namePrice">
-            <div className="modal-itemName">{item[0].name}</div>
-            <div id="modal-price">{`$${(item[0].price / 50).toFixed(2)}`}</div>
+      <div className="related-modalAllInformation">
+        <div className="related-modalTextInformation">
+          <div className="related-modalNamePrice">
+            <div className="related-modalItemName">{item[0].name}</div>
+            <div id="related-modalPrice">{`$${(item[0].price / 50).toFixed(2)}`}</div>
           </div>
-          <div className="modal-seller">
-            <span className="modal-informationHeader">Seller</span>
+          <div className="related-modalSeller">
+            <span className="related-modalInformationHeader">Seller</span>
             <span>{item[0].seller}</span>
           </div>
           <div>
             <div
-              className="modal-informationHeader"
-              id="modal-details"
+              className="related-modalInformationHeader"
+              id="related-modalDetails"
             >
               Highlights
             </div>
             <div>{separateDetails()}</div>
           </div>
           <div>
-            <div className="modal-informationHeader">
+            <div className="related-modalInformationHeader">
               Description
             </div>
-            <div id="modal-description">{item[0].description}</div>
+            <div id="related-modalDescription">{item[0].description}</div>
           </div>
-          <div className="modal-shipping">
-            <div className="modal-truck">
+          <div className="related-modalShipping">
+            <div className="related-modalTruck">
               <i className="fas fa-truck" />
             </div>
             <div>{item[0].shippingStatus}</div>
           </div>
-          <div className="modal-addToCart">
-            <button type="button" id="modal-addToCartButton">Add to cart</button>
+          <div className="related-modalAddToCart">
+            <button type="button" id="related-modalAddToCartButton">Add to cart</button>
           </div>
         </div>
-        <div className="modal-mainImage">
+        <div className="related-modalMainImage">
           <img src={item[0].imageUrl[index]} alt="product-main" id="related-images" />
           {favorite ? (
             <button
               type="button"
-              className="modal-favorite"
+              className="related-modalFavorite"
               data-testid="favoriteFilledButton"
               onClick={() => { setFavorite(!favorite); }}
             >
@@ -100,7 +100,7 @@ const Modal = ({ show, closeModal, item }) => {
             : (
               <button
                 type="button"
-                className="modal-nonFavorited"
+                className="related-modalNonFavorited"
                 data-testid="favoriteUnfilledButton"
                 onClick={() => { setFavorite(!favorite); }}
               >
@@ -108,9 +108,9 @@ const Modal = ({ show, closeModal, item }) => {
               </button>
             )}
         </div>
-        <div className="modal-images">
+        <div className="realted-modalImages">
           <div
-            id="smallImg1"
+            id="related-smallImg1"
             role="button"
             tabIndex={0}
             onKeyDown={handleImageChange}
@@ -125,7 +125,7 @@ const Modal = ({ show, closeModal, item }) => {
             />
           </div>
           <div
-            id="smallImg2"
+            id="related-smallImg2"
             role="button"
             tabIndex={0}
             onKeyDown={handleImageChange}
@@ -139,7 +139,7 @@ const Modal = ({ show, closeModal, item }) => {
             />
           </div>
           <div
-            id="smallImg3"
+            id="related-smallImg3"
             role="button"
             tabIndex={0}
             onKeyDown={handleImageChange}

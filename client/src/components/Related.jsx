@@ -5,7 +5,7 @@ import Items from './Items';
 import Header from './Header';
 import Modal from './Modal';
 
-class App extends React.Component {
+class Related extends React.Component {
   constructor(props) {
     super(props);
 
@@ -83,12 +83,12 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+Related.propTypes = {
   selectedItem: PropTypes.number,
 };
 
-App.defaultProps = {
+Related.defaultProps = {
   selectedItem: 0,
 };
 
-export default App;
+export default Related;

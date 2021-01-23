@@ -22,7 +22,6 @@ const item = [{
       expect(getByAltText('product-main')).toBeInTheDocument();
     });
 
-
     test('close button functionality', () => {
         const handleClose = jest.fn();
     
