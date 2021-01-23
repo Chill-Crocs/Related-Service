@@ -13,6 +13,18 @@ const generateDetails = () => {
   return details;
 };
 
+const generateImages = () => {
+  const images = [];
+  let i = 0;
+
+  while (i < 4) {
+    const image = faker.image.image();
+    images.push(image);
+    i += 1;
+  }
+  return images;
+};
+
 const generateFromThisShop = () => {
   const shopItems = [];
   let i = 0;
@@ -25,7 +37,7 @@ const generateFromThisShop = () => {
       _id: itemNum,
       name: faker.lorem.words(),
       price: faker.commerce.price(),
-      imageUrl: faker.image.image(),
+      imageUrl: generateImages(),
       description: faker.commerce.productDescription(),
       details: generateDetails(),
       availability: Math.random() < 0.5,
@@ -49,7 +61,7 @@ const generateRelatedItems = () => {
       _id: itemNum,
       name: faker.lorem.words(),
       price: faker.commerce.price(),
-      imageUrl: faker.image.image(),
+      imageUrl: generateImages(),
       description: faker.commerce.productDescription(),
       details: generateDetails(),
       availability: Math.random() < 0.5,

@@ -3,6 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import Items from './Items';
 import Header from './Header';
+import Modal from './Modal';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,9 +12,14 @@ class App extends React.Component {
     this.state = {
       forYou: [],
       fromShop: [],
+      show: false,
+      currentItemId: null,
+      currentItemLoc: '',
     };
 
     this.getRelated = this.getRelated.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -31,12 +37,29 @@ class App extends React.Component {
       });
   }
 
+  closeModal() {
+    this.setState({
+      show: false,
+    });
+  }
+
+  openModal(id, loc) {
+    this.setState({
+      show: true,
+      currentItemId: Number(id),
+      currentItemLoc: loc,
+    });
+  }
+
   render() {
-    const { forYou, fromShop } = this.state;
+    const {
+      forYou, fromShop, show, currentItemId, currentItemLoc,
+    } = this.state;
     return (
       <div>
         <Header />
-        <div className="items" data-testid="itemsHolder"><Items forYou={forYou} fromShop={fromShop} /></div>
+        <div className="related-itemsContainer" data-testid="itemsHolder"><Items forYou={forYou} fromShop={fromShop} openModal={this.openModal} /></div>
+        <div data-testid="modalHolder"><Modal show={show} closeModal={this.closeModal} item={currentItemLoc === 'shop' ? fromShop.filter((item) => item._id === currentItemId) : forYou.filter((item) => item._id === currentItemId)} /></div>
       </div>
     );
   }

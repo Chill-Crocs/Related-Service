@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IndividualItem from './IndividualItem';
 
-const Items = ({ forYou, fromShop }) => (
+const Items = ({ forYou, fromShop, openModal }) => (
   <div className="related-allItems">
     <div className="related-fromShopHeaderBar">
       <h3 className="related-fromShopHeader">More from this shop</h3>
@@ -14,6 +14,8 @@ const Items = ({ forYou, fromShop }) => (
           <div className="related-shopIndividualItem">
             <IndividualItem
               item={item}
+              openModal={openModal}
+              loc="shop"
             />
           </div>
         </div>
@@ -29,6 +31,8 @@ const Items = ({ forYou, fromShop }) => (
           <div className="related-relatedIndividualItem">
             <IndividualItem
               item={item}
+              openModal={openModal}
+              loc="forYou"
             />
           </div>
         </div>
@@ -42,7 +46,7 @@ Items.propTypes = {
     _id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
-    imageUrl: PropTypes.string,
+    imageUrl: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
     details: PropTypes.arrayOf(PropTypes.string),
     seller: PropTypes.string,
@@ -52,12 +56,13 @@ Items.propTypes = {
     _id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
-    imageUrl: PropTypes.string,
+    imageUrl: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
     details: PropTypes.arrayOf(PropTypes.string),
     seller: PropTypes.string,
     shippingStatus: PropTypes.string,
   })),
+  openModal: PropTypes.func,
 };
 
 Items.defaultProps = {
@@ -65,7 +70,7 @@ Items.defaultProps = {
     {
       name: '',
       price: null,
-      imageUrl: '',
+      imageUrl: [''],
       description: '',
       details: [''],
       seller: '',
@@ -76,13 +81,14 @@ Items.defaultProps = {
     {
       name: '',
       price: null,
-      imageUrl: '',
+      imageUrl: [''],
       description: '',
       details: [''],
       seller: '',
       shippingStatus: '',
     },
   ],
+  openModal: () => {},
 };
 
 export default Items;
