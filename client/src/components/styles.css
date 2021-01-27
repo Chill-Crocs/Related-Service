@@ -1,0 +1,481 @@
+/****************************** BODY/MASTER STYLES ******************************/
+#related-body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  }
+
+#related-itemsModalContainer {
+    background-color: #F8EBE6;
+}
+
+#related-images {
+    display: flex;
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+/****************************** HEADER/BANNER ******************************/
+.related-AllHeader {
+    fill: #F8EBE6;
+    background-color: white;
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+}
+
+/****************************** All items containers ******************************/
+.related-itemsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    min-width: 0px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    flex-shrink: 2;
+}
+
+.related-allItems {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5% 95%;
+}
+
+/****************************** FROM SHOP ******************************/
+.related-fromShop {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: end;
+    padding-right: 25px;
+    padding-top: 10px;
+}
+
+.related-fromShopHeader {
+    grid-column: 1 / 2;
+    grid-row: 1/ 2;
+    display: flex;
+    justify-self: flex-start;
+    padding-left: 10px;
+    margin: 0;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 150;
+}
+
+.related-fromShopHeaderBar {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+/****************************** RELATED FOR YOU ******************************/
+.related-items {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-content: start;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+.related-relatedHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-end;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0;
+    padding-left: 35px;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 150;
+}
+
+.related-HeaderBar {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+/****************************** INDIVIDUAL ITEMS  ******************************/
+.related-shopIndividualItem, .related-relatedIndividualItem {
+    padding: 9px;
+    display: flex;
+    z-index: 0;
+}
+
+.related-itemCaption, .related-seller, .related-shippingStatus {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 18px;
+    min-width: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.related-seller, .related-shippingStatus {
+    color: #595959;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.related-price {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222
+}
+
+
+/****************************** FAVORITES BUTTON  ******************************/
+.related-imageButton {
+    position: relative;
+}
+
+.related-nonFavorite, .related-favorited {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.related-nonFavorite {
+    color: white;
+    font-size: 1.6em;
+}
+
+.related-favorited {
+    color: rgb(214, 86, 107);
+    font-size: 1.6em;
+}
+
+.related-nonFavorite:hover {
+   transform: scale(1.1);
+} 
+
+.related-favoriteContainer {
+    display: none;
+}
+
+.related-hoverCard:hover .related-favoriteContainer {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: block;
+}
+
+/****************************** SHOW MORE BUTTON ******************************/
+.related-showMore {
+    font-size: 13px;
+    line-height: 1.4;
+    min-height: 36px;
+    min-width: 36px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid #222222;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 0;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.related-showMore:hover::after {
+    border: 4px solid #222222;
+    transform: scale(1.03);
+    content: "";
+    background: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/****************************** HOVER CARD ******************************/
+.related-hoverCard {
+    z-index: 1;
+    position:relative;
+    cursor: pointer;
+}
+
+.related-hoverCard:hover::before {
+    content: "";
+    opacity: 1;
+    z-index: -1;
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    bottom: -9px;
+    left: -6px;
+    width: 103%;
+    height: 102%;
+    transform: scale(0.96);
+    background: white;
+    border: 1px dotted transparent;
+    border-radius: 6px;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+}
+
+/****************************** REMOVE OUTLINE FROM MODAL CLICK ******************************/
+.related-modalClick {
+    outline: none;
+    border: none;
+}
+
+/****************************** MODAL CONTAINER ******************************/
+.related-modalContainer {
+    display: grid;
+    position: fixed; 
+    justify-content: center;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.7); 
+}
+
+.related-modalAllInformation{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 70% 30%;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    width: 40%;
+    height: 50%;
+    background-color: #F8EBE6;
+    border-radius: 4px;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+}
+
+.related-modalAllInformation::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    width: 105%;
+    height: 105%;
+    background-color: rgb(252, 247, 247);
+    border-radius: 6px;
+    justify-self: center;
+    top: -12px;
+    border: 4px dotted #e9d5cc;
+}
+
+.related-modalTextInformation {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    overflow: scroll;
+}
+
+.related-modalTextInformation::-webkit-scrollbar {
+    display: none;
+}
+
+.related-modalButtonClose{
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    top: 0px;
+    right: 0px;
+    padding: 12px;
+    z-index: 1000;
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    background-color: white;
+    line-height: 1;
+}
+
+.related-modalSvgHolder {
+    height: 24px;
+    width: 24px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.related-modalInformationHeader {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #222222;
+}
+
+.related-modalTruck {
+    padding-right: 5px;
+}
+
+.related-modalNamePrice {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-row: 1 / 2;
+}
+.related-modalItemName {
+    display: flex;
+    grid-row: 1 / 2;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.related-modalSeller {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    grid-row: 2 / 3;
+    cursor: pointer;
+}
+
+#related-modalPrice {
+    font-weight: 550;
+    font-size: 20px;
+    line-height: 20px;
+    color: #222222;
+    padding-right: 8px;
+}
+
+#related-modalDetails {
+    display: flex;
+    align-self: flex-start;
+    grid-row: 3/ 4;
+}
+
+#related-modalDescription {
+    display: flex;
+    align-self: flex-start;
+    grid-row: 4 / 5;
+    font-size: 14px;
+    line-height: 20px;
+    color: #222222;
+}
+
+.related-modalShipping {
+    display: flex;
+    flex-direction: row;
+    grid-row: 5 / 6;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+}
+
+.related-modalAddToCart {
+    grid-row: 6 / 7;
+}
+
+#related-modalAddToCartButton {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    position: relative;
+    padding-right: 10px;
+    width: 95%;
+    height: 60%;
+    color: #FFFFFF;
+    background: #222222;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 0;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/****************************** MODAL IMAGES ******************************/
+.realted-modalImages {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    place-items: center;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding-top: 5px;
+    max-height: 100%;
+}
+
+.related-modalMainImage {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    position: relative;
+    margin: auto;
+    padding: 5px;
+    padding-right: 5px;
+    max-height: 100%;
+}
+
+#related-smallImg1, #related-smallImg2, #related-smallImg3  {
+    display: flex;
+    position: relative;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+#related-smallImg1 {
+    grid-column: 1 / 2;
+    padding-right: 2px;
+}
+ #related-smallImg2 {
+    padding-right: 2px;
+    padding-left: 2px;
+    grid-column: 2 / 3;
+}
+
+#related-smallImg3 {
+    padding-left: 2px;
+    grid-column: 3 / 4;
+}
+
+#related-smallImg1:hover, #related-smallImg2:hover, #related-smallImg3:hover {
+    transform: scale(0.99)
+}
+
+/****************************** MODAL FAVORITE BUTTON ******************************/
+
+.related-modalNonFavorited, .related-modalFavorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.8em;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.related-modalNonFavorited {
+    color: white;
+}
+
+.related-modalNonFavorited:hover {
+    transform: scale(1.01);
+}
+
+.related-modalFavorite {
+    color: rgb(214, 86, 107);;
+}
