@@ -21,14 +21,6 @@
     grid-auto-rows: minmax(100px, 100px);
   }
 
-  #header {
-    grid-column: 1/3;
-    grid-row: 1;
-    border: solid;
-    border-color: rgba(128, 128, 128, 0.5);
-    border-width: 2px;
-  }
-
   #related {
     grid-column: 1/3;
     grid-row: 24/29;
