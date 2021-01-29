@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack -w",
     "db:setup": "node database/seed.js",
-    "start": "nodemon server",
+    "start": "node server/index.js",
     "test": "jest --collectCoverage"
   },
   "dependencies": {
