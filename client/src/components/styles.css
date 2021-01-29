@@ -15,6 +15,25 @@
     border-radius: 6px;
 }
 
+#grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(100px, 100px);
+  }
+
+  #header {
+    grid-column: 1/3;
+    grid-row: 1;
+    border: solid;
+    border-color: rgba(128, 128, 128, 0.5);
+    border-width: 2px;
+  }
+
+  #related {
+    grid-column: 1/3;
+    grid-row: 24/29;
+  }
+
 /****************************** HEADER/BANNER ******************************/
 .related-AllHeader {
     fill: #F8EBE6;
