@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const db = require('./index.js');
 
 mongoose.Promise = global.Promise;
+// eslint-disable-next-line no-unused-vars
+const db = require('./index.js');
 
-/// ///Schema//////
 const RelatedSchema = new mongoose.Schema({
   _id: Number,
   relatedItems: [
